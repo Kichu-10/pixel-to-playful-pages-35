@@ -51,6 +51,10 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-soft: var(--brand-soft);
+  --color-gold: var(--gold);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -63,7 +67,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.97 0.01 145);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
@@ -87,6 +91,10 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
+  --brand: oklch(0.62 0.17 145);
+  --brand-dark: oklch(0.42 0.13 150);
+  --brand-soft: oklch(0.95 0.04 145);
+  --gold: oklch(0.85 0.17 85);
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.129 0.042 264.695);
   --sidebar-primary: oklch(0.208 0.042 265.755);
@@ -142,3 +150,6 @@
     color: var(--color-foreground);
   }
 }
+
+@utility bg-brand-gradient { background-image: linear-gradient(180deg, var(--brand), oklch(0.7 0.16 145)); }
+@utility text-gold-gradient { background-image: linear-gradient(180deg, oklch(0.95 0.12 95), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
