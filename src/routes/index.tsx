@@ -12,6 +12,7 @@ import aviatrix from "@/assets/g-aviatrix.jpg";
 import mines from "@/assets/g-mines.jpg";
 import fish from "@/assets/g-fish.jpg";
 import slot from "@/assets/g-slot.jpg";
+import deco from "@/assets/jackpot-deco.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -165,9 +166,11 @@ function Index() {
           <button aria-label="Next" onClick={() => scrollCats(1)}><ChevronRight className="h-5 w-5 text-muted-foreground" /></button>
         </nav>
 
-        <section className="rounded-2xl bg-brand-soft p-4 text-center">
-          <p className="flex items-center justify-center gap-1 text-2xl font-black text-brand-dark"><Sparkles className="h-4 w-4" />JACKPOT<Sparkles className="h-4 w-4" /></p>
-          <p className="mx-auto mt-2 w-fit rounded-full border border-gold bg-card px-6 py-2 text-3xl font-bold tabular-nums">{jackpot.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+        <section className="relative overflow-hidden rounded-2xl bg-brand-soft p-4 text-center">
+          <img src={deco} alt="" width={816} height={816} loading="lazy" className="pointer-events-none absolute -left-2 bottom-0 h-28 w-28 object-contain" />
+          <img src={deco} alt="" width={816} height={816} loading="lazy" className="pointer-events-none absolute -right-2 bottom-0 h-28 w-28 -scale-x-100 object-contain" />
+          <p className="relative flex items-center justify-center gap-1 text-2xl font-black text-brand-dark"><Sparkles className="h-4 w-4" />JACKPOT<Sparkles className="h-4 w-4" /></p>
+          <p className="relative mx-auto mt-2 w-fit rounded-full border border-gold bg-card px-6 py-2 text-3xl font-bold tabular-nums">{jackpot.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
         </section>
 
         <section className="rounded-2xl bg-card p-3">
