@@ -105,7 +105,7 @@ function Index() {
   };
 
   const scrollCats = (d: number) => catRef.current?.scrollBy({ left: d * 120, behavior: "smooth" });
-  const s = slides[slide];
+  const s = slides[slide] ?? slides[0]!;
 
   return (
     <div className="mx-auto min-h-screen max-w-md bg-brand-gradient pb-28">
