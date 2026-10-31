@@ -96,7 +96,7 @@ function Index() {
 
   const deposit = () => {
     const n = Number(amount);
-    if (!n || n < 100) return toast.error("Minimum deposit is Rs. 100");
+    if (!n || n < 100) { toast.error("Minimum deposit is Rs. 100"); return; }
     const bonus = bonusClaimed ? 0 : Math.min(n, 50000);
     setBalance((b) => b + n + bonus);
     if (bonus) setBonusClaimed(true);
